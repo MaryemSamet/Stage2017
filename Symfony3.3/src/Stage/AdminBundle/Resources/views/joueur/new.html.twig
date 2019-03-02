@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+{% block stylesheet %}
+    <style>
+
+        #hr2{
+            position:absolute;
+            background-color:#ececee ;
+            height:2px ;
+            width:730px;
+            border-style:none;
+            margin:-37px;
+            right: 19%;
+        }
+        table {
+            padding-top:10px;
+            text-align:center;
+        }
+        th,tr,td{
+            border: inset midnightblue;
+            border-radius: 7px ;
+
+            padding-top:10px;
+            padding-left:25px;
+            padding-right:25px;
+        }
+        th{
+            border: outset indigo;
+
+        }
+    </style>
+{% endblock %}
+
+
+{% block entete %}
+    <p class="flexItem"> Géstion des joueurs</p>
+
+    <span id="nbFederation" class="flexItem"> {{ variables['nb'] }} <br>  Joueurs </span>
+    <span id="ajouter" class="flexItem"> <form method="POST" action="{{ path('joueur_new') }}"> <BUTTON >  + Ajouter</BUTTON>  </form>  </span>
+{% endblock %}
+{% block body %}
+    <div class="tableau" >
+
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+        {{ form_end(form) }}
+
+    </div>
+
+{% endblock %}
+{% block search %}
+    <div class="searchZone">
+        <form action="{{ path('search_filter')}}" method="get" >
+            <input type="text" id="search-term" name="search-term" placeholder="rechercher...">
+            <input id="bouton" type="submit" value="" >
+        </form>
+    </div>
+{% endblock %}

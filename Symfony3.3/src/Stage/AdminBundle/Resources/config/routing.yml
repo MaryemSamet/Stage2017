@@ -1,0 +1,35 @@
+stage_admin_homepage:
+    path:     /{_locale}
+    defaults: { _controller: StageAdminBundle:Default:index }
+
+stage_admin_federation:
+    path:     /federation
+    defaults: { _controller: StageAdminBundle:Federation:index}
+
+stage_admin_joueur:
+    path:     /joueur
+    defaults: { _controller: StageAdminBundle:Joueur:index}
+
+sandbox_homepage:
+    path:     /print/{_locale}
+    defaults: { _controller: StageAdminBundle:Print:index }
+
+sandbox_pdfexample:
+    path:     /pdf-example/{_locale}
+    defaults: { _controller: StageAdminBundle:Print:pdf }
+
+print_joueur:
+    path:     /printj/{_locale}
+    defaults: { _controller: StageAdminBundle:Printj:index }
+
+print_joueur_pdf:
+    path:     /pdf-examplej/{_locale}
+    defaults: { _controller: StageAdminBundle:Printj:pdf }
+
+Excel_print:
+    path:     /excel/{_locale}
+    defaults: { _controller: StageAdminBundle:Excel:index}
+
+Excel_print_joueur:
+    path:     /excel/{_locale}
+    defaults: { _controller: StageAdminBundle:Excel2:index}

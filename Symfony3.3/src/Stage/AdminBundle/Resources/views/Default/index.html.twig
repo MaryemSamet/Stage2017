@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link type="text/css" href="{{ asset('bundles/stageadmin/css/flags16.css') }}" rel="Stylesheet"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/stageadmin/css/style2.css') }}">
+
+    <script src="http://www.marghoobsuleman.com/misc/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/stageadmin/css/dd.css') }}" />
+    <script src="{{ asset('bundles/stageadmin/js/msdropdown/jquery.dd.min.js') }}"></script>
+    <script language="javascript" type="text/javascript">
+        function checkValidOption()
+        {
+
+            var field = document.getElementById('countries');
+            var s = document.getElementById('CountryList');
+            field.onchange = function () { fieldcheck(); }
+            fieldcheck();
+
+            function fieldcheck() {
+                switch (field.value)
+                {
+                    case 'tn' : {
+                        var i;
+                        for(i = s.options.length - 1 ; i >= 0 ; i--)
+                        {
+                            s.remove(i);
+                        }
+                        var option = document.createElement("option");
+                        option.text = "FR";
+                        option.value = "FR";
+                        option.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}");
+
+                        s.add(option);
+                        var option2 = document.createElement("option");
+                        option2.text = "EN";
+                        option2.value = "US";
+                        option2.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}");
+
+                        s.add(option2);
+                        var option3 = document.createElement("option");
+                        option3.text = "AR";
+                        option3.value = "AR";
+                        option3.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'ar'})) }}");
+
+                        s.add(option3);
+                        var option4 = document.createElement("option");
+                        option4.text = "ES";
+                        option4.value = "ES";
+                        option4.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'es'})) }}");
+
+                        s.add(option4);
+                        var option5 = document.createElement("option");
+                        option5.text = "IT";
+                        option5.value = "IT";
+                        option5.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'it'})) }}");
+
+                        s.add(option5);
+
+                    }break;
+                    case 'jp': {
+                        var f;
+                        for(f= s.options.length - 1 ; f >= 0 ; f--)
+                        {
+                            s.remove(f);
+                        }
+                        var opt33 = document.createElement("option");
+                        opt33.text = "EN";
+                        opt33.value = "EN";
+                        opt33.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}");
+
+                        s.add(opt33);
+                        var opti333 = document.createElement("option");
+                        opti333.text = "JP";
+                        opti333.value = "JP";
+                        opti333.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'jp'})) }}");
+
+                        s.add(opti333);
+                    }break;
+                    case 'ae': {
+                        var j;
+                        for(j= s.options.length - 1 ; j >= 0 ; j--)
+                        {
+                            s.remove(j);
+                        }
+                        var opt = document.createElement("option");
+                        opt.text = "EN";
+                        opt.value = "EN";
+                        opt.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}");
+
+                        s.add(opt);
+                        var opt2 = document.createElement("option");
+                        opt2.text = "AR";
+                        opt2.value = "AR";
+                        opt2.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'ar'})) }}");
+
+                        s.add(opt2);
+                    }break;
+                    case 'fr': {
+                        var a;
+                        for(a= s.options.length - 1 ; a >= 0 ; a--)
+                        {
+                            s.remove(a);
+                        }
+                        var opt3 = document.createElement("option");
+                        opt3.text = "EN";
+                        opt3.value = "EN";
+                        opt3.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}");
+
+                        s.add(opt3);
+                        var opti3 = document.createElement("option");
+                        opti3.text = "FR";
+                        opti3.value = "FR";
+                        opti3.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}");
+
+                        s.add(opti3);
+                    }break;
+                    case 'sa' : {
+                        var y;
+                        for(y= s.options.length - 1 ; y >= 0 ; y--)
+                        {
+                            s.remove(y);
+                        }
+                        var optiia = document.createElement("option");
+                        optiia.text = "EN";
+                        optiia.value = "EN";
+                        optiia.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}");
+                        s.add(optiia);
+                        var optio1e = document.createElement("option");
+                        optio1e.text = "AR";
+                        optio1e.value = "AR";
+                        optio1e.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'ar'})) }}");
+
+                        s.add(optio1e);
+
+                    }break;
+                    case 'ro' : {
+                        var d;
+                        for(d= s.options.length - 1 ; d >= 0 ; d--)
+                        {
+                            s.remove(d);
+                        }
+                        var optiio = document.createElement("option");
+                        optiio.text = "EN";
+                        optiio.value = "EN";
+                        optiio.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}");
+
+                        s.add(optiio);
+                        var optio11 = document.createElement("option");
+                        optio11.text = "RO";
+                        optio11.value = "RO";
+                        optio11.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'ro'})) }}");
+
+                        s.add(optio11);
+                    }break;
+                    case 'tr' : {
+                        var c;
+                        for(c= s.options.length - 1 ; c>= 0 ; c--)
+                        {
+                            s.remove(c);
+                        }
+                        var optii = document.createElement("option");
+                        optii.text = "EN";
+                        optii.value = "EN";
+                        optii.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}");
+
+                        s.add(optii);
+                        var optio1 = document.createElement("option");
+                        optio1.text = "TR";
+                        optio1.value = "TR";
+                        optio1.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'tr'})) }}");
+
+                        s.add(optio1);
+                    }break;
+                    case 'ca' : {
+                        var k;
+                        for(k= s.options.length - 1 ; k >= 0 ; k--)
+                        {
+                            s.remove(k);
+                        }
+                        var opti = document.createElement("option");
+                        opti.text = "EN";
+                        opti.value = "EN";
+                        opti.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}");
+
+                        s.add(opti);
+                        var optio = document.createElement("option");
+                        optio.text = "FR";
+                        optio.value = "FR";
+                        optio.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}");
+
+                        s.add(optio);
+                    }break;
+                    default :
+                    {   var va = field.options[field.selectedIndex].value;
+                        var e;
+                        for(e= s.options.length - 1 ; e >= 0 ; e--)
+                        {
+                            s.remove(e);
+                        }
+                        var opt1 = document.createElement("option");
+                        opt1.text = "EN";
+                        opt1.value = "EN";
+                        opt1.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}");
+                        s.add(opt1);
+                        var op2 = document.createElement("option");
+                        op2.text = va;
+                        op2.value = va ;
+                        op2.setAttribute('data-href',"{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'va' })) }}");
+
+                        s.add(op2);
+                    }break;
+                }
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+
+<div id="entete">
+    <p>   {{ 'translate.text3' |trans }}</p>
+    <img id="back" src="{{ asset('bundles/stageadmin/img/logo.jpg') }}">
+
+      <label   class="pays">
+        <select name="countries" id="countries"  style="width:300px;" onchange="checkValidOption();">
+            <option value='ae' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ae" data-title="United Arab Emirates"></option>
+            <option value='af' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag af" data-title="Afghanistan"></option>
+            <option value='ag' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ag" data-title="Antigua and Barbuda"></option>
+            <option value='ai' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ai" data-title="Anguilla"></option>
+            <option value='al' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag al" data-title="Albania"></option>
+            <option value='am' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag am" data-title="Armenia"></option>
+            <option value='an' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag an" data-title="Netherlands Antilles"></option>
+            <option value='ao' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ao" data-title="Angola"></option>
+            <option value='aq' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag aq" data-title="Antarctica"></option>
+            <option value='ar' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ar" data-title="Argentina"></option>
+            <option value='as' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag as" data-title="American Samoa"></option>
+            <option value='at' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag at" data-title="Austria"></option>
+            <option value='au' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag au" data-title="Australia"></option>
+            <option value='aw' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag aw" data-title="Aruba"></option>
+            <option value='ax' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ax" data-title="Aland Islands"></option>
+            <option value='az' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag az" data-title="Azerbaijan"></option>
+            <option value='ba' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ba" data-title="Bosnia and Herzegovina"></option>
+            <option value='bb' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag bb" data-title="Barbados"></option>
+            <option value='bd' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag bd" data-title="Bangladesh"></option>
+            <option value='be' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag be" data-title="Belgium"></option>
+            <option value='bf' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag bf" data-title="Burkina Faso"></option>
+            <option value='bg' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag bg" data-title="Bulgaria"></option>
+            <option value='bh' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag bh" data-title="Bahrain"></option>
+            <option value='bi' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag bi" data-title="Burundi"></option>
+            <option value='bj' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag bj" data-title="Benin"></option>
+            <option value='bm' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag bm" data-title="Bermuda"></option>
+            <option value='bn' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag bn" data-title="Brunei Darussalam"></option>
+            <option value='bo' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag bo" data-title="Bolivia"></option>
+            <option value='br' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag br" data-title="Brazil"></option>
+            <option value='bs' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag bs" data-title="Bahamas"></option>
+            <option value='bt' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag bt" data-title="Bhutan"></option>
+            <option value='bv' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag bv" data-title="Bouvet Island"></option>
+            <option value='bw' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag bw" data-title="Botswana"></option>
+            <option value='by' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag by" data-title="Belarus"></option>
+            <option value='bz' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag bz" data-title="Belize"></option>
+            <option value='ca' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ca" data-title="Canada"></option>
+            <option value='cc' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag cc" data-title="Cocos (Keeling) Islands"></option>
+            <option value='cd' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag cd" data-title="Democratic Republic of the Congo"></option>
+            <option value='cf' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag cf" data-title="Central African Republic"></option>
+            <option value='cg' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag cg" data-title="Congo"></option>
+            <option value='ch' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ch" data-title="Switzerland"></option>
+            <option value='ci' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ci" data-title="Cote D'Ivoire (Ivory Coast)"></option>
+            <option value='ck' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ck" data-title="Cook Islands"></option>
+            <option value='cl' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag cl" data-title="Chile"></option>
+            <option value='cm' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag cm" data-title="Cameroon"></option>
+            <option value='cn' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag cn" data-title="China"></option>
+            <option value='co' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag co" data-title="Colombia"></option>
+            <option value='cr' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag cr" data-title="Costa Rica"></option>
+            <option value='cs' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag cs" data-title="Serbia and Montenegro"></option>
+            <option value='cu' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag cu" data-title="Cuba"></option>
+            <option value='cv' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag cv" data-title="Cape Verde"></option>
+            <option value='cx' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag cx" data-title="Christmas Island"></option>
+            <option value='cy' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag cy" data-title="Cyprus"></option>
+            <option value='cz' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag cz" data-title="Czech Republic"></option>
+            <option value='de' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag de" data-title="Germany"></option>
+            <option value='dj' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag dj" data-title="Djibouti"></option>
+            <option value='dk' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag dk" data-title="Denmark"></option>
+            <option value='dm' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag dm" data-title="Dominica"></option>
+            <option value='do' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag do" data-title="Dominican Republic"></option>
+            <option value='dz' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag dz" data-title="Algeria"></option>
+            <option value='ec' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ec" data-title="Ecuador"></option>
+            <option value='ee' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ee" data-title="Estonia"></option>
+            <option value='eg' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag eg" data-title="Egypt"></option>
+            <option value='eh' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag eh" data-title="Western Sahara"></option>
+            <option value='er' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag er" data-title="Eritrea"></option>
+            <option value='es' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag es" data-title="Spain"></option>
+            <option value='et' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag et" data-title="Ethiopia"></option>
+            <option value='fi' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag fi" data-title="Finland"></option>
+            <option value='fj' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag fj" data-title="Fiji"></option>
+            <option value='fk' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag fk" data-title="Falkland Islands (Malvinas)"></option>
+            <option value='fm' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag fm" data-title="Federated States of Micronesia"></option>
+            <option value='fo' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag fo" data-title="Faroe Islands"></option>
+            <option value='fr' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag fr" data-title="France"></option>
+            <option value='fx' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag fx" data-title="France, Metropolitan"></option>
+            <option value='ga' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ga" data-title="Gabon"></option>
+            <option value='gb' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag gb" data-title="Great Britain (UK)">G</option>
+            <option value='gd' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag gd" data-title="Grenada"></option>
+            <option value='ge' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ge" data-title="Georgia"></option>
+            <option value='gf' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag gf" data-title="French Guiana"></option>
+            <option value='gh' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag gh" data-title="Ghana"></option>
+            <option value='gi' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag gi" data-title="Gibraltar"></option>
+            <option value='gl' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag gl" data-title="Greenland"></option>
+            <option value='gm' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag gm" data-title="Gambia"></option>
+            <option value='gn' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag gn" data-title="Guinea"></option>
+            <option value='gp' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag gp" data-title="Guadeloupe"></option>
+            <option value='gq' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag gq" data-title="Equatorial Guinea"></option>
+            <option value='gr' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag gr" data-title="Greece"></option>
+            <option value='gs' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag gs" data-title="S. Georgia and S. Sandwich Islands"></option>
+            <option value='gt' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag gt" data-title="Guatemala"></option>
+            <option value='gu' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag gu" data-title="Guam"></option>
+            <option value='gw' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag gw" data-title="Guinea-Bissau"></option>
+            <option value='gy' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag gy" data-title="Guyana"></option>
+            <option value='hk' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag hk" data-title="Hong Kong"></option>
+            <option value='hm' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag hm" data-title="Heard Island and McDonald Islands"></option>
+            <option value='hn' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag hn" data-title="Honduras"></option>
+            <option value='hr' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag hr" data-title="Croatia (Hrvatska)"></option>
+            <option value='ht' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ht" data-title="Haiti"></option>
+            <option value='hu' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag hu" data-title="Hungary"></option>
+            <option value='id' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag id" data-title="Indonesia"></option>
+            <option value='ie' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ie" data-title="Ireland"></option>
+            <option value='il' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag il" data-title="Israel"></option>
+            <option value='in' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag in" data-title="India" ></option>
+            <option value='io' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag io" data-title="British Indian Ocean Territory"></option>
+            <option value='iq' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag iq" data-title="Iraq"></option>
+            <option value='ir' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ir" data-title="Iran"></option>
+            <option value='is' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag is" data-title="Iceland"></option>
+            <option value='it' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag it" data-title="Italy"></option>
+            <option value='jm' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag jm" data-title="Jamaica"></option>
+            <option value='jo' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag jo" data-title="Jordan"></option>
+            <option value='jp' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag jp" data-title="Japan"></option>
+            <option value='ke' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ke" data-title="Kenya"></option>
+            <option value='kg' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag kg" data-title="Kyrgyzstan"></option>
+            <option value='kh' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag kh" data-title="Cambodia"></option>
+            <option value='ki' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ki" data-title="Kiribati"></option>
+            <option value='km' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag km" data-title="Comoros"></option>
+            <option value='kn' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag kn" data-title="Saint Kitts and Nevis"></option>
+            <option value='kp' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag kp" data-title="Korea (North)"></option>
+            <option value='kr' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag kr" data-title="Korea (South)"></option>
+            <option value='kw' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag kw" data-title="Kuwait"></option>
+            <option value='ky' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ky" data-title="Cayman Islands"></option>
+            <option value='kz' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag kz" data-title="Kazakhstan"></option>
+            <option value='la' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag la" data-title="Laos"></option>
+            <option value='lb' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag lb" data-title="Lebanon"></option>
+            <option value='lc' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag lc" data-title="Saint Lucia"></option>
+            <option value='li' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag li" data-title="Liechtenstein"></option>
+            <option value='lk' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag lk" data-title="Sri Lanka"></option>
+            <option value='lr' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag lr" data-title="Liberia"></option>
+            <option value='ls' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ls" data-title="Lesotho"></option>
+            <option value='lt' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag lt" data-title="Lithuania"></option>
+            <option value='lu' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag lu" data-title="Luxembourg"></option>
+            <option value='lv' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag lv" data-title="Latvia"></option>
+            <option value='ly' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ly" data-title="Libya"></option>
+            <option value='ma' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ma" data-title="Morocco"></option>
+            <option value='mc' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag mc" data-title="Monaco"></option>
+            <option value='md' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag md" data-title="Moldova"></option>
+            <option value='mg' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag mg" data-title="Madagascar"></option>
+            <option value='mh' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag mh" data-title="Marshall Islands"></option>
+            <option value='mk' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag mk" data-title="Macedonia"></option>
+            <option value='ml' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ml" data-title="Mali"></option>
+            <option value='mm' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag mm" data-title="Myanmar"></option>
+            <option value='mn' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag mn" data-title="Mongolia"></option>
+            <option value='mo' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag mo" data-title="Macao"></option>
+            <option value='mp' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag mp" data-title="Northern Mariana Islands"></option>
+            <option value='mq' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag mq" data-title="Martinique"></option>
+            <option value='mr' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag mr" data-title="Mauritania"></option>
+            <option value='ms' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ms" data-title="Montserrat"></option>
+            <option value='mt' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag mt" data-title="Malta"></option>
+            <option value='mu' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag mu" data-title="Mauritius"></option>
+            <option value='mv' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag mv" data-title="Maldives"></option>
+            <option value='mw' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag mw" data-title="Malawi"></option>
+            <option value='mx' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag mx" data-title="Mexico"></option>
+            <option value='my' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag my" data-title="Malaysia"></option>
+            <option value='mz' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag mz" data-title="Mozambique"></option>
+            <option value='na' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag na" data-title="Namibia"></option>
+            <option value='nc' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag nc" data-title="New Caledonia"></option>
+            <option value='ne' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ne" data-title="Niger"></option>
+            <option value='nf' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag nf" data-title="Norfolk Island"></option>
+            <option value='ng' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ng" data-title="Nigeria"></option>
+            <option value='ni' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ni" data-title="Nicaragua"></option>
+            <option value='nl' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag nl" data-title="Netherlands"></option>
+            <option value='no' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag no" data-title="Norway"></option>
+            <option value='np' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag np" data-title="Nepal"></option>
+            <option value='nr' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag nr" data-title="Nauru"></option>
+            <option value='nu' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag nu" data-title="Niue"></option>
+            <option value='nz' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag nz" data-title="New Zealand (Aotearoa)"></option>
+            <option value='om' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag om" data-title="Oman"></option>
+            <option value='pa' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag pa" data-title="Panama"></option>
+            <option value='pe' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag pe" data-title="Peru"></option>
+            <option value='pf' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag pf" data-title="French Polynesia"></option>
+            <option value='pg' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag pg" data-title="Papua New Guinea"></option>
+            <option value='ph' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ph" data-title="Philippines"></option>
+            <option value='pk' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag pk" data-title="Pakistan"></option>
+            <option value='pl' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag pl" data-title="Poland"></option>
+            <option value='pm' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag pm" data-title="Saint Pierre and Miquelon"></option>
+            <option value='pn' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag pn" data-title="Pitcairn"></option>
+            <option value='pr' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag pr" data-title="Puerto Rico"></option>
+            <option value='ps' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ps" data-title="Palestinian Territory"></option>
+            <option value='pt' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag pt" data-title="Portugal"></option>
+            <option value='pw' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag pw" data-title="Palau"></option>
+            <option value='py' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag py" data-title="Paraguay"></option>
+            <option value='qa' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag qa" data-title="Qatar"></option>
+            <option value='re' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag re" data-title="Reunion"></option>
+            <option value='ro' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ro" data-title="Romania"></option>
+            <option value='ru' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ru" data-title="Russian Federation"></option>
+            <option value='rw' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag rw" data-title="Rwanda"></option>
+            <option value='sa' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag sa" data-title="Saudi Arabia"></option>
+            <option value='sb' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag sb" data-title="Solomon Islands"></option>
+            <option value='sc' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag sc" data-title="Seychelles"></option>
+            <option value='sd' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag sd" data-title="Sudan"></option>
+            <option value='se' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag se" data-title="Sweden"></option>
+            <option value='sg' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag sg" data-title="Singapore"></option>
+            <option value='sh' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag sh" data-title="Saint Helena"></option>
+            <option value='si' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag si" data-title="Slovenia"></option>
+            <option value='sj' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag sj" data-title="Svalbard and Jan Mayen"></option>
+            <option value='sk' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag sk" data-title="Slovakia"></option>
+            <option value='sl' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag sl" data-title="Sierra Leone"></option>
+            <option value='sm' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag sm" data-title="San Marino"></option>
+            <option value='sn' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag sn" data-title="Senegal"></option>
+            <option value='so' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag so" data-title="Somalia"></option>
+            <option value='sr' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag sr" data-title="Suriname"></option>
+            <option value='st' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag st" data-title="Sao Tome and Principe"></option>
+            <option value='su' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag su" data-title="USSR (former)"></option>
+            <option value='sv' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag sv" data-title="El Salvador"></option>
+            <option value='sy' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag sy" data-title="Syria"></option>
+            <option value='sz' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag sz" data-title="Swaziland"></option>
+            <option value='tc' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag tc" data-title="Turks and Caicos Islands"></option>
+            <option value='td' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag td" data-title="Chad"></option>
+            <option value='tf' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag tf" data-title="French Southern Territories"></option>
+            <option value='tg' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag tg" data-title="Togo"></option>
+            <option value='th' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag th" data-title="Thailand"></option>
+            <option value='tj' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag tj" data-title="Tajikistan"></option>
+            <option value='tk' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag tk" data-title="Tokelau"></option>
+            <option value='tl' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag tl" data-title="Timor-Leste"></option>
+            <option value='tm' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag tm" data-title="Turkmenistan"></option>
+            <option value='tn' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag tn" data-title="Tunisia" selected="selected"></option>
+            <option value='to' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag to" data-title="Tonga"></option>
+            <option value='tp' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag tp" data-title="East Timor"></option>
+            <option value='tr' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag tr" data-title="Turkey"></option>
+            <option value='tt' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag tt" data-title="Trinidad and Tobago"></option>
+            <option value='tv' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag tv" data-title="Tuvalu"></option>
+            <option value='tw' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag tw" data-title="Taiwan"></option>
+            <option value='tz' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag tz" data-title="Tanzania"></option>
+            <option value='ua' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ua" data-title="Ukraine"></option>
+            <option value='ug' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ug" data-title="Uganda"></option>
+            <option value='uk' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag uk" data-title="United Kingdom"></option>
+            <option value='um' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag um" data-title="United States Minor Outlying Islands"></option>
+            <option value='us' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag us" data-title="United States"></option>
+            <option value='uy' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag uy" data-title="Uruguay"></option>
+            <option value='uz' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag uz" data-title="Uzbekistan"></option>
+            <option value='va' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag va" data-title="Vatican City State (Holy See)"></option>
+            <option value='vc' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag vc" data-title="Saint Vincent and the Grenadines"></option>
+            <option value='ve' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ve" data-title="Venezuela"></option>
+            <option value='vg' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag vg" data-title="Virgin Islands (British)"></option>
+            <option value='vi' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag vi" data-title="Virgin Islands (U.S.)"></option>
+            <option value='vn' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag vn" data-title="Viet Nam"></option>
+            <option value='vu' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag vu" data-title="Vanuatu"></option>
+            <option value='wf' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag wf" data-title="Wallis and Futuna"></option>
+            <option value='ws' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ws" data-title="Samoa"></option>
+            <option value='ye' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag ye" data-title="Yemen"></option>
+            <option value='yt' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag yt" data-title="Mayotte"></option>
+            <option value='yu' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag yu" data-title="Yugoslavia (former)"></option>
+            <option value='za' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag za" data-title="South Africa"></option>
+            <option value='zm' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag zm" data-title="Zambia"></option>
+            <option value='zr' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag zr" data-title="Zaire (former)"></option>
+            <option value='zw' data-image="{{ asset('bundles/stageadmin/img/blank.gif') }}" data-imagecss="flag zw" data-title="Zimbabwe"></option>
+        </select >
+      </label>
+
+
+    <div style=" top:24px;  right: 350px; position: absolute; border:none 1px gray;padding-left:5px;padding-right:5px;width:20px;height:20px">
+     <label for="CountryList" >  <div id="dvFlag"  style=" background-image:url({{ asset('bundles/stageadmin/img/flags.png') }});background-repeat:no-repeat;float:left;height:16px;width:16px" class="fr"></div></label>
+        <select  style=" height:5px; width: 20px; border-color: gray; border: none"  onchange="changeFlag()" onkeypress="changeFlag()" id="CountryList">
+            <option value="AU">AU</option>
+            <option value="PT">PT</option> <!--brezil-->
+            <option value="FR" selected="selected" data-href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}">FR </option> <!--canada-->
+            <option value="IN" >IN</option>
+            <option value="ID">ID</option>
+            <option value="IT" data-href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'it'})) }}">IT</option>
+            <option value="JP" data-href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'ar'})) }}">JP</option>
+            <option value="KR">KR</option>
+            <option value="RO">RO</option>
+            <option value="RU">RU</option>
+            <option value="SA" data-href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'ar'})) }}">AR</option>
+            <option value="ES">ES</option>
+            <option value="TR"  data-href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'tr'})) }}">EN</option>
+            <option value="US"  data-href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">EN</option>
+        </select>
+    </div>
+
+
+</div>
+
+
+
+<div id="main">
+    <div id="menu">
+        <ul>  <p>{{ 'translate.titre' |trans }} </p>
+            <div class="flex-container">
+                <a   href="{{ path('stage_admin_homepage') }}"><span ><li class="flex-item">  <img id="icon1" src="{{ asset('bundles/stageadmin/img/icon1.png') }}"> {{ 'translate.link1' |trans }}</li> </span> </a>
+                <a   href="{{ path('federation_index') }}"><span><li class="flex-item"> <img  id="icon2" src="{{ asset('bundles/stageadmin/img/icon2.png') }}">{{ 'translate.link2' |trans }} </li></span> </a>
+                <a   href="{{ path('joueur_index') }} "><span><li class="flex-item"> <img id="icon3" src="{{ asset('bundles/stageadmin/img/icon3.png') }}">  {{ 'translate.link3' |trans }}</li></span></a>
+
+
+            </div>
+
+        </ul>
+
+        <div>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
+                <a href="{{ path('fos_user_security_logout') }}"> <img  id="eteindre" src="{{ asset('bundles/stageadmin/img/eteindre.PNG') }}"> </a>
+
+            {% else %}
+                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div id="contenu">
+        <p id="Dashboard"> {{ 'translate.link1' |trans }}</p>
+        <span id="bloc-content">
+ 	<span id="bloc"> <center> <p  id="titre"> {{ 'translate.link2' |trans }}</p>  <p id="nbr">{{ variables['nbFederation'] }}</p></center> </span>
+    <span id="bloc"><center> <p id= "titre">{{ 'translate.link3' |trans }}</p>   <p id="nbr">{{ variables['nbJoueur'] }}</p> </center> </span>
+ </span>
+        <div class="footer"> © 2017 SidratSoft
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("#countries").msDropdown();
+    })
+</script>
+<script type="text/javascript">
+    function changeFlag() {$("#dvFlag").attr('class', $("#CountryList").val().toLowerCase());
+
+    }
+    $('#CountryList').change(function() {
+        window.location = $(':selected',this).attr('data-href')
+    });
+</script>
+</body>
+</html>

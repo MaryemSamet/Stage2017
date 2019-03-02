@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+{% block stylesheet %}
+    <style>
+
+        #hr2{
+            position:absolute;
+            background-color:#ececee ;
+            height:2px ;
+            width:730px;
+            border-style:none;
+            margin:-37px;
+            right: 19%;
+        }
+        table {
+            text-align:center;
+        }
+        th{
+            padding-top:30px;
+            padding-bottom:20px;
+            padding-left:4px;
+            padding-right:35px;
+        }
+
+    </style>
+{% endblock %}
+
+{% block entete %}
+    <p class="flexItem"> Géstion des fédération</p>
+
+    <span id="nbFederation" class="flexItem"> {{ variables['nb'] }} <br>  Féderation </span>
+    <span id="ajouter" class="flexItem"> <form method="POST" action="{{ path('federation_new') }}"> <BUTTON >  + Ajouter</BUTTON>  </form>  </span>
+{% endblock %}
+
+
+{% block body %}
+    <div class="tableau" >
+
+        {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Edit" />
+        {{ form_end(edit_form) }}
+
+        <ul>
+            <li>
+                {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+    </div>
+
+{% endblock %}
+{% block search %}
+    <div class="searchZone">
+        <form action="{{ path('search_filter')}}" method="get" >
+            <input type="text" id="search-term" name="search-term" placeholder="rechercher...">
+            <input id="bouton" type="submit" value="" >
+        </form>
+    </div>
+{% endblock %}

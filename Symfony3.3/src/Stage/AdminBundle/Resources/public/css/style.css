@@ -1,0 +1,57 @@
+body { 
+    background-image: url("../img/handball.png")  ;
+    background-repeat: no-repeat;
+    background-position: left top;
+   
+} 
+img { 
+width :150px ;
+height:150px ;
+ padding-top: 50px;
+ padding-left: 966px;
+}
+a {
+
+padding-left: 143px;
+
+}
+ #login{  margin: auto;
+    width: 400px;
+     padding-top: 50px;
+     padding-left: 850px; 
+}
+.connexion { 
+ height: 33px;
+    width: 430px;
+   background-color:rgb(5,100,255);opacity:0.8;
+    color: white ;
+   font-variant: normal;
+
+
+    border-radius: 5px;
+
+     }
+     .inp {
+      box-shadow:  1px 2px 8px rgba(0, 0, 0,0.2) ;
+      text-shadow : 10px;
+      border-radius: 3px ;
+       height: 22px;
+    width: 430px;
+  border-style: groove;
+     }
+     .souvenir{
+         cursor: pointer;
+  border-radius: 3px; /* angles arrondis */
+  box-shadow: outset 0px 1px 3px rgba(0,0,0,0.3) ;
+  
+     }
+#mdp { color:rgb(5,100,255);opacity:0.8 ;
+text-decoration: none ;
+    position:absolute;}
+
+hr { border-style: inset;
+    border-width: 1.5px;
+    width: 106% ;
+    position: relative;
+    right:-2px;
+}

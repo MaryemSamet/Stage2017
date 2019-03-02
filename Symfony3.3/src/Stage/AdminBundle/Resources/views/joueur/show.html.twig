@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+{% block stylesheet %}
+    <style>
+
+        #hr2{
+            position:absolute;
+            background-color:#ececee ;
+            height:2px ;
+            width:730px;
+            border-style:none;
+            margin:-37px;
+            right: 19%;
+        }
+        table {
+            padding-top:10px;
+            text-align:center;
+        }
+        th,tr,td{
+
+            padding-top:10px;
+            padding-left:25px;
+            padding-right:25px;
+        }
+
+        #im2{
+            width:50px;
+            height:37px;
+        }
+        #im3{
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            right: 300px;
+            top: 250px;
+        }
+    </style>
+{% endblock %}
+
+
+{% block entete %}
+    <p class="flexItem"> Géstion des joueurs</p>
+
+    <span id="nbFederation" class="flexItem"> {{ variables['nb'] }} <br>  Joueurs </span>
+    <span id="ajouter" class="flexItem"> <form method="POST" action="{{ path('joueur_new') }}"> <BUTTON >  + Ajouter</BUTTON>  </form>  </span>
+{% endblock %}
+{% block body %}
+    <div class="tableau">
+        <img id="im3" src="{{ asset('uploads/'~joueur.image) }}" alt="{{ joueur.image }}">
+
+        <table>
+            <tbody>
+            <tr>
+                <th>Nom</th>
+                <td>{{ joueur.nom }}</td>
+            </tr>
+            <tr>
+                <th>Nationalite</th>
+                <td> {{ joueur.nomPays }}<img src="{{ asset('bundles/stageadmin/img/'~joueur.nomPays~'.png') }}"  alt="{{ joueur.nomPays }}" id="im2" /> </td>
+            </tr>
+            <tr>
+                <th>Federation</th>
+                <td>{{ joueur.nomFederation }}</td>
+            </tr>
+            <tr>
+                <th>Date de naissance</th>
+                <td>{% if joueur.dateNaiss %}{{ joueur.dateNaiss|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            </tbody>
+        </table>
+        <ul>
+
+            <li>
+                {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+    </div>
+
+{% endblock %}

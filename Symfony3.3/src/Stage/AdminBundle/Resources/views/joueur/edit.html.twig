@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+{% block stylesheet %}
+    <style>
+
+        #hr2{
+            position:absolute;
+            background-color:#ececee ;
+            height:2px ;
+            width:730px;
+            border-style:none;
+            margin:-37px;
+            right: 19%;
+        }
+        table {
+            padding-top:10px;
+            text-align:center;
+        }
+        th,tr,td{
+            border: inset midnightblue;
+            border-radius: 7px ;
+
+            padding-top:10px;
+            padding-left:25px;
+            padding-right:25px;
+        }
+        th{
+            border: outset indigo;
+
+        }
+    </style>
+{% endblock %}
+
+
+
+{% block entete %}
+    <p class="flexItem"> Géstion des joueurs</p>
+
+    <span id="nbFederation" class="flexItem"> {{ variables['nb'] }} <br>  Joueurs </span>
+    <span id="ajouter" class="flexItem"> <form method="POST" action="{{ path('joueur_new') }}"> <BUTTON >  + Ajouter</BUTTON>  </form>  </span>
+{% endblock %}
+
+{% block body %}
+    <div class="tableau" >
+
+        {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Edit" />
+        {{ form_end(edit_form) }}
+
+        <ul>
+            <li>
+                {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+    </div>
+
+{% endblock %}

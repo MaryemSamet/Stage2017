@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheet %}
+    <style>
+        #im2{
+            width:50px;
+            height:37px;
+        }
+
+        table {
+            padding-top:10px;
+            text-align:center;
+        }
+        th,tr,td{
+            border-radius: 7px ;
+
+            padding-top:10px;
+            padding-left:25px;
+            padding-right:25px;
+        }
+
+        #im2{
+            width:50px;
+            height:37px;
+        }
+
+    </style>
+{% endblock %}
+
+{% block entete %}
+    <p class="flexItem"> Géstion des fédération</p>
+
+    <span id="nbFederation" class="flexItem"> {{ variables['nb'] }} <br>  Féderation </span>
+    <span id="ajouter" class="flexItem"> <form method="POST" action="{{ path('federation_new') }}"> <BUTTON >  + Ajouter</BUTTON>  </form>  </span>
+{% endblock %}
+
+{% block body %}
+    <div class="tableau" >
+        <table>
+            <tbody>
+
+            <tr>
+                <th>Pays</th>
+                <td> <img id="im2" src="{{ asset('bundles/stageadmin/img/'~federation.nomPays~'.PNG') }}"/> {{ federation.nomPays }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ federation.nom }}</td>
+            </tr>
+            <tr>
+                <th>Sigle</th>
+                <td>{{ federation.sigle }}</td>
+            </tr>
+            <tr>
+                <th>Logo</th>
+                <td><img src="{{ asset('uploads/'~federation.image) }}"   id="im2" alt="{{ federation.image }}" /> </td>
+            </tr>
+            <tr>
+                <th>Creation</th>
+                <td>{% if federation.creation %}{{ federation.creation|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>President</th>
+                <td>{{ federation.president }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <ul>
+            <li>
+                {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+    </div>
+
+{% endblock %}
+
+
+{% block search %}
+    <div class="searchZone">
+        <form action="{{ path('search_filter')}}" method="get" >
+            <input type="text" id="search-term" name="search-term" placeholder="rechercher...">
+            <input id="bouton" type="submit" value="" >
+        </form>
+    </div>
+{% endblock %}

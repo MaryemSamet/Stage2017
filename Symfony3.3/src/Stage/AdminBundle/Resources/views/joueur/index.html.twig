@@ -1,0 +1,127 @@
+{% extends 'base.html.twig' %}
+
+{% block entete %}
+    <p class="flexItem"> {{ 'translate.text' |trans }}</p>
+
+    <span id="nbFederation" class="flexItem"> {{ variables['nb'] }} <br>  {{ 'translate.text2' |trans }} </span>
+    <span id="ajouter" class="flexItem"> <form method="POST" action="{{ path('joueur_new') }}" > <BUTTON >  + {{ 'translate.btn' |trans }}</BUTTON>  </form>  </span>
+{% endblock %}
+
+
+{% block stylesheet %}
+    <style>
+        #im2{
+            width:50px;
+            height:37px;
+        }
+        #hr2{
+            position:absolute;
+            background-color:#ececee ;
+            height:2px ;
+            width:730px;
+            border-style:none;
+            margin:-277px;
+            right: 33%;
+        }
+        table {
+            text-align:center;
+        }
+        th{
+            padding-top:30px;
+            padding-bottom:20px;
+            padding-left:44px;
+            padding-right:35px;
+        }
+
+           #im {
+               width :25px;
+               height:25px;
+           }
+        #im3  {
+
+            position:absolute;
+            width:30px;
+            right:900px;
+        }
+        #im4 {
+
+            position:absolute;
+            width:30px;
+            right:850px;
+        }
+
+
+        .pagination {
+            display: flex ;
+
+        }
+        .pagination li {
+            padding:5px 20px 8px 20px ;
+            transition: background-color .3s;
+            border: 1px outset #bbb1d2;
+        }
+        .pagination li.active {
+            background-color: #333d4b;
+            color: white;
+            border: 1px solid #7d8892;
+        }
+
+        .pagination a:hover {
+            padding:8px 10px  ;
+            border-radius:12px;
+            border-style:inset;
+            background-color: #ced7d6;}
+    </style>
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="tableau">
+        <table>
+            <thead>
+            <tr>
+                <th width="120">{{ 'translate.ch1'| trans }}</th>
+                <th width="120">{{ 'translate.ch2' | trans }}</th>
+                <th width="150">{{ 'translate.ch3'| trans }}</th>
+                <th width="150">{{ 'translate.ch4'| trans }}</th>
+                <th width="60">{{ 'translate.champs7'| trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for joueur in joueurs %}
+                <tr>
+                    <td>{{ joueur.nom }}</td>
+                    <td><img src="{{ asset('bundles/stageadmin/img/'~joueur.nomPays~'.png') }}"  id="im2"/> {{ joueur.nomPays }}</td>
+                    <td>{{ joueur.nomFederation }}</td>
+                    <td>{% if joueur.dateNaiss %}{{ joueur.dateNaiss|localizeddate('long', 'none') }} ({{ joueur.getAge() }} ans ){% endif %}</td>
+                    <td>
+
+                          <div >
+                                <a href="{{ path('joueur_delete', { 'id': joueur.id }) }}"> <img src="{{ asset('bundles/stageadmin/img/delete.png') }}"  id="im"></a>
+
+                                <a href="{{ path('joueur_edit', { 'id': joueur.id }) }}" > <img src="{{ asset('bundles/stageadmin/img/edit.png') }}"  id="im"></a>
+                          </div>
+                    </td>
+                </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="navigation">
+            {{ knp_pagination_render(joueurs) }}
+        </div>
+    </div>
+    <hr id="hr2">
+{% endblock %}
+{% block search %}
+    <div class="searchZone">
+        <a  href="{{ path('print_joueur_pdf') }}" > <img id="im3" src="{{ asset('bundles/stageadmin/img/pdf.png') }}"></a>
+        <a  href="{{ path('Excel_print_joueur') }}" > <img id="im4" src="{{asset('bundles/stageadmin/img/excel.png')}}"></a>
+
+        <form action="{{ path('search_filter_joueur')}}" method="get" >
+            <input type="text" id="search-term" name="search-term" placeholder="{{ 'translate.rech' |trans }}">
+            <input id="bouton" type="submit" value="" >
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,259 @@
+#entete, #menu, #contenu {
+    padding:0px 0;
+}
+html, body {
+    max-height:95%;
+    background-attachment: fixed;
+    width: 100%;
+    height: 95%;
+
+}
+
+#list {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none ;
+}
+#entete p {
+    position:absolute;
+    left:1100px;
+    top:7px; }
+
+#main{
+    max-height:inherit;
+    width: inherit;
+    height: inherit;
+    margin:0;
+    padding: 0;
+}
+#menu  {background: linear-gradient(#202d38, #363f4e);
+    margin-left:-8px;
+    float:left;
+    width:235px;
+    background-color:#273139;
+    height: 550px;
+}
+#contenu {
+    background-image: url(../img/back.png) ;
+
+    height:556px;
+}
+#back{
+    margin-left: 67px;
+    width: 50px;
+    height: 50px ;
+
+}
+#eteindre {
+    width: 100% ;
+    margin-top: 299px ;
+}
+#icon1 , #icon2, #icon3 {
+    width: 15px;
+    height: 15px ;
+    padding-right : 15px;
+
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+li { margin-bottom:20px ; }
+
+a { text-decoration:none;
+    color :#5a646d ; }
+ul {list-style: none; }
+div ul p {color:#8195a5 ;
+    margin-left : -17px;
+    font-family:"Trebuchet MS" ,Courier, monospace;}#entete, #menu, #contenu {
+                                                        padding:0px 0;
+                                                    }
+#entete {
+    box-shadow: 8px 77px  422px #968080;
+    margin-top:-8px;
+    margin-left: -8px;
+    margin-bottom: 1px;
+}
+#main {
+
+    max-height: 960px;
+    margin:auto;
+}
+#menu  {background: linear-gradient(#202d38, #363f4e);
+    margin-left:-8px;
+    float:left;
+    width:235px;
+
+    height: 550px;
+}
+#contenu {
+    background-image  : url('../img/back.PNG');
+    height:556px;
+}
+#back{
+    margin-left: 67px;
+    width: 50px;
+    height: 50px ;
+
+}
+#eteindre {
+    width: 100% ;
+    margin-top: 305px ;
+}
+#icon1 , #icon2, #icon3 {
+    width: 15px;
+    height: 15px ;
+    padding-right : 15px;
+
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+}
+li { margin-bottom:20px ; }
+
+a { text-decoration:none;
+
+    transition: all 0.3s cubic-bezier(0, 0, 0.6, 0.31);
+
+    color :#7d8892 ; }
+ul {list-style: none; }
+div ul p {color:rgba(118, 142, 160, 0.45) ;
+    margin-left : -17px;
+    font-family:"Trebuchet MS" ,Courier, monospace;}
+#bloc-content {
+    display: flex ;
+
+}
+#bloc {margin-left: 25px;
+    margin-top:15px ;
+    width :110px;
+    height: 100px ;
+    background-color : white  ;
+    color : #879bb9 ;
+    border-style: ridge;
+}
+#titre {font-family: serif ;
+}
+
+#nbr {font-size: 200% ;
+    margin-top: -14px ; }
+#Dashboard { margin-top:1px ;
+    position : relative  ;
+    right: -26px ;
+    top : 15px;
+    font-size: 150% ;
+    color :rgba(99, 99, 98, 0.73);
+}
+
+
+.flex-container a{ width:175px;
+    margin-left:-40px;
+    padding-left:60px;
+
+}
+.flex-container a:hover{
+    background-color:#071421;
+
+}
+
+.footer {position:absolute;
+    padding-right:500px;
+    padding-bottom:20px;
+    left:236px;
+    top:573px;
+    color: #979d9e ;
+    padding-left:70px;
+    background: linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0.17)); }
+.flexContent {
+    color :#5d5757;
+
+    display: flex;
+    margin-right: 70px;  }
+.flexContent p  { flex: 1;
+    margin-left:20px;
+    font-size : 200% ;
+
+}
+.flexContent span {margin-top:20px;}
+.flexItem button {
+    background-color: rgb(67, 179, 139);
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow : 2px 5px 44px #5c735b ;
+    border-radius :6px  ;
+}
+#nbFederation  { flex: 0.15;
+    text-align: center;
+    font-size: 120% ;}
+
+
+.searchZone {
+    background-color:white ;
+    position:absolute;
+    right:5.8%;
+    padding: 10px 30px 25px 647px ;
+    border-radius:10px 10px 0px 0px ;
+}
+#bouton {
+
+    background-image: url(../img/search-icon.png) ;
+    width : 30px;
+    height:30px;
+    border-style :none ;
+}
+form{
+    display:flex ;
+}
+button:hover{ border-style: inset; }
+.searchZone input[type='text'] {
+    border-radius: 5px 0px  0px 5px  ;
+    padding-left:20px;
+    padding-right: 70px;
+    border: 1px solid rgba(207, 213, 220, 0.67) ;
+
+}
+::-webkit-input-placeholder {
+    color:    #b7b6ce;
+}
+
+#hr1{ margin-top:4.88%;
+    background-color:red ;
+    height:2px ;
+    width:60px;
+    border-style:none;
+    margin-right:995px;
+}
+
+.tableau {
+    background-color:white;
+    border-radius: 0px 0px 10px 10px;
+    margin-top:-0.5%;
+    margin-right:6.3%;
+    margin-left:22.8%;
+
+}
+.pays{
+    right:290px;
+    position:absolute;
+    top:21px;
+    max-width : 5px;
+
+}
+select {
+    background: #303a48;
+    padding-right:28px;
+    cursor:pointer;
+}

@@ -1,0 +1,18 @@
+stage_admin:
+    resource: "@StageAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix:   /{_locale}
+stage_controller:
+    resource: "@StageAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+
+

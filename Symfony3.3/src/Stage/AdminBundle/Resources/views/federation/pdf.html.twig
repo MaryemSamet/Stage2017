@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    {% block stylesheet %} {% endblock %}
+
+    <link rel="icon" type="image/x-icon" href="{{ absolute_url(asset('favicon.ico') ) }}" />
+
+
+    <style>
+
+        table {
+            text-align:center;
+        }
+        th{
+            padding-top:30px;
+            padding-bottom:20px;
+
+        }
+        td,th,tr{
+            padding-left:4px;
+            padding-right:35px;
+        }
+
+        #im {
+            width :25px;
+            height:25px;
+        }
+        #im2{
+            width:50px;
+            height:37px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="tableau" >
+
+    <table>
+
+        <thead>
+        <tr>
+            <th  width="200">Pays</th>
+            <th width="200">Nom de la fédération</th>
+            <th width="50">Sigle</th>
+            <th width="50">Logo</th>
+            <th width="130">Création</th>
+            <th width="150">Président</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for federation in federations %}
+            <tr>
+                <td ><img id="im2" src="{{ absolute_url(asset('bundles/stageadmin/img/'~federation.nomPays~'.PNG')) }}"/> {{ federation.nomPays }}</td>
+                <td>{{ federation.nom }}</td>
+                <td>{{ federation.sigle }}</td>
+                <td><img src="{{ absolute_url(asset('uploads/'~federation.image)) }}" alt="{{ federation.image }}" id="im2"/> </td>
+                <td>{% if federation.creation %}{{ federation.creation|localizeddate('long','none') }}{% endif %}</td>
+                <td>{{ federation.president }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>
